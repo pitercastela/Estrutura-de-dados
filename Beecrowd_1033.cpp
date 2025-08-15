@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-    int i;
-
+    double i;
+    int caso = 1;
 long long int fibo(int x){
     if (x == 0){
         i += 1;
@@ -25,12 +25,15 @@ int main()
     cin >> M;
     k = M;
 
-    while (k--)
+    while (true)
     {   
+        if (M == 0 && N == 0) 
+            break;
+        
         i = 0;
         cin >> N;
         int R = fibo(N);
-        cout << "fib(" << N << ") = " << i - 1 << " calls = " << R << endl;
+        cout << "Case " << caso << ": " << M << " " << N << " " << i/N << endl;
     }
     
     return 0;
