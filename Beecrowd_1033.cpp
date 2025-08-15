@@ -8,33 +8,34 @@ long long int fibo(int x){
         i += 1;
         return 0;
     }
-        
+
     if (x == 1){
         i += 1;
         return 1;
     }
     i += 1;
     return fibo(x - 1) + fibo(x - 2);
-    
+
 }
 
 int main()
 {
 
     int M, N, k;
-    cin >> M;
+
     k = M;
 
     while (true)
-    {   
-        if (M == 0 && N == 0) 
+    {
+        cin >> N >> M;
+        if (N == 0 && M == 0)
             break;
-        
+
         i = 0;
-        cin >> N;
+
         int R = fibo(N);
-        cout << "Case " << caso << ": " << M << " " << N << " " << i/N << endl;
+        cout << "Case " << caso << ": " << N << " " << M << " " << i/M << endl;
     }
-    
+
     return 0;
 }

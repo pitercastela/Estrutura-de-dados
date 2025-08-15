@@ -32,14 +32,17 @@ int main()
     fibo(10000);
     int N;
     cin >> N;
-
-    for (int i = 0; i <= N; i++) {
-        if (i = N) {
-            cout << fibonacci[i] << endl;
+    int k = 0;
+    while (true)
+    {
+        if (k == N-1){
+            cout << fibonacci[k] << endl;
             break;
         }
-        cout << fibonacci[i] << " ";
+        cout << fibonacci[k] << " ";
+        k += 1;
     }
+
 
     return 0;
 }

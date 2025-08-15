@@ -36,9 +36,8 @@ int main()
 
     while (M--)
     {
-        cout << "Informe o número" << endl;
         cin >> N;
-        cout <<  fibonacci[N] << endl;
+        cout << "Fib(" << N << ") = " << fibonacci[N] << endl;
     }
 
     return 0;
