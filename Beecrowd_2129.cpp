@@ -2,16 +2,25 @@
 
 using namespace std;
 
-int fat(int x){
-    if(x == 0)
-        return 1;
-    return x * fat(x-1);
+long long int fatorial[10001];
+
+
+long long int fat(int x){
+    if(x == 0){
+        fatorial[x] = 1;
+        return fatorial[x];
+    }
+    fatorial[x] = x * fat(x-1);
+    return fatorial[x];
 }
 
 int main(void) {
-    int N, res, f, i = 10;
-    cin >> N;
-    f = fat(N);
+    fat(1000000);
+    int N, res, f, i;
+    while (cin >> N)
+    {
+        i = 10;
+            f = fatorial[N];
     while (true)
     {
         if (f % i != 0){
@@ -23,4 +32,8 @@ int main(void) {
     res = (f % i) / (i/10);
 
     cout << res << endl;
+    }
+
+
+
 }

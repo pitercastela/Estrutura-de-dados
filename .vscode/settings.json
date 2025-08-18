@@ -4,5 +4,6 @@
         "iomanip": "cpp",
         "fibonacci_otimizado": "cpp",
         "vector": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
