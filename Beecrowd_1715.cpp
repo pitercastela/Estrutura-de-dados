@@ -1,38 +1,34 @@
 #include <iostream>
-#include <vector>
-
 using namespace std;
 
-int main(void) {
-    int M, N, fez_gol, bom_jogador = 0;
-    vector<int> jogadores;
+int main() {
+    int n,m;
 
-    cin >> M >> N;
+    
+    while (cin >> n >> m) {
+        int goltodas = 0;
 
-    for (int i = 0; i < N; i++)
-    {
-        jogadores.push_back(0);
-    }
+        for (int i = 0; i < n; ++i) {
+            bool marcoutodas = true;
 
-    for (int i = 0 ; i < M; i++)
-    {
-        for (int j = 0 ; j < N; j++)
-        {
-            cin >> fez_gol;
-            if (fez_gol != 0)
-            {
-                jogadores[j] = jogadores[j] + 1;
+            for (int j = 0; j < m; ++j) {
+                int gols;
+                cin >> gols;
 
+                
+                if (gols == 0) {
+                    marcoutodas = false;
+                }
+            }
+
+            
+            if (marcoutodas) {
+                goltodas++;
             }
         }
 
-    }
-    for(int i : jogadores){
-        if (i == M){
-            bom_jogador++;
-        }
+        cout << goltodas << endl;
     }
 
-    cout << bom_jogador << endl;
-
+    return 0;
 }
