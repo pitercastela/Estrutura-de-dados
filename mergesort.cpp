@@ -23,7 +23,7 @@ void merge(vector<int>& arr, int esq, int dir, int meio) {
         d[i] = arr[meio + 1 + i];
     }
 
-    int i = 0; 
+    int i = 0;
     int j = 0;
     int k = esq;
 
@@ -55,7 +55,7 @@ void mergeSort(vector<int>& arr, int esq, int dir) {
     if (esq >= dir) {
         return;
     }
-    
+
 
     mergeSort(arr, esq, meio);
     mergeSort(arr, meio + 1, dir);
@@ -69,7 +69,6 @@ int main() {
     cout << "Array original: " << endl;
     printVector(arr);
 
-    // Chama a função de ordenação
     mergeSort(arr, 0, arr.size() - 1);
 
     cout << "Array ordenado: " << endl;
