@@ -27,7 +27,7 @@ void countingSort(int arr[], int size) {
 
     // 2. Criar um array de contagem de tamanho (max + 1) e inicializá-lo com zeros
     // Usamos alocação dinâmica para criar um array com tamanho variável
-    int* count = new int[max + 1];
+    int count[max + 1];
     for (int i = 0; i <= max; ++i) {
         count[i] = 0;
     }
@@ -50,7 +50,6 @@ void countingSort(int arr[], int size) {
     }
     
     // Libera a memória alocada para o array de contagem
-    delete[] count;
 }
 
 int main() {
@@ -65,7 +64,7 @@ int main() {
     // Chama a função de ordenação
     countingSort(arr, n);
 
-    cout << "Array ordenado:" << endl;
+    cout << "\nArray ordenado:" << endl;
     printArray(arr, n);
 
     return 0;
