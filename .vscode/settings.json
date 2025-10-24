@@ -3,7 +3,7 @@
         "iostream": "cpp",
         "iomanip": "cpp",
         "fibonacci_otimizado": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
