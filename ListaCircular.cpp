@@ -85,37 +85,63 @@ public:
         }
         cout << "head" << endl;
     }
+int Josephus(int n, int k, int start) {
+
+        if (n <= 0 || k <= 0 || start <= 0 || start > n) {
+            return -1; 
+        }
+
+        No* p = head->proximo;
+        while(p != head) {
+            No* temp = p;
+            p = p->proximo;
+            delete temp;
+        }
+        head->proximo = head;
+        head->anterior = head;
+
+        for (int i = 1; i <= n; i++) {
+            addFinal(i);
+        }
+
+        No *atual = head->proximo;
+        while (atual->dado != start && atual != head) {
+            atual = atual->proximo;
+        }
+        if (atual == head) return -1;
+
+        while (head->proximo != head->anterior) {
+            
+            for (int i = 0; i < k; i++) {
+                atual = atual->proximo;
+                if (atual == head) {
+                    atual = atual->proximo;
+                }
+            }
+
+            No * eliminar = atual;
+
+            atual =  eliminar->proximo;
+            if (atual == head) {
+                atual = atual->proximo;
+            }
+
+
+             eliminar->anterior->proximo =  eliminar->proximo;
+             eliminar->proximo->anterior =  eliminar->anterior;
+            delete  eliminar; 
+        }
+
+        return head->proximo->dado;
+    }
+    
+
 };
 
 int main() {
     ListaCircular lista;
-    lista.imprime();
 
-    lista.addInicio(20);
-    lista.addInicio(10);
-    lista.imprime();
-
-    lista.addFinal(30);
-    lista.addFinal(40);
-    lista.imprime();
-
-
-    lista.Busca(30);
-    lista.Busca(99);
-
-    lista.remove(99);
-    lista.imprime();
-
-    lista.remove(20);
-    lista.imprime();
-    lista.remove(10);
-    lista.imprime();
-
-    lista.remove(40);
-    lista.imprime();
-
-    lista.remove(30);
-    lista.imprime();
+    int sobrevivente1 = lista.Josephus(5, 2, 2);
 
     return 0;
 }
